@@ -37,8 +37,8 @@ cat > input_Nk/Nk_$NK.in << EOF
 /
 &SYSTEM
   ibrav = 5 ! rhombohedral primitive cell
-  celldm(1) = 8.2678614363 ! Bohr
-  celldm(4) = 0.53248150505214 ! cosine between the two vectors of the Bravais
+  celldm(1) = 8.267861436 ! Bohr
+  celldm(4) = 0.532481505 ! cosine between the two vectors of the Bravais
   nat = 2
   ntyp = 2
   ecutwfc = 40
@@ -53,8 +53,8 @@ ATOMIC_SPECIES
 Ge     72.64 ge_pbe_v1.4.uspp.F.UPF
 Te     127.6 Te_pbe_v1.uspp.F.UPF
 ATOMIC_POSITIONS crystal
-Ge           0.0049400000       0.0049400000       0.0049400000 
-Te           0.4740600000       0.4740600000       0.4740600000 
+Ge           0.00494000       0.00494000       0.00494000 
+Te           0.47406000       0.47406000       0.47406000 
 K_POINTS automatic
 $NK $NK $NK 0 0 0
 

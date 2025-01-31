@@ -18,7 +18,7 @@ do
 &CONTROL
   calculation = 'scf'
   restart_mode = 'from_scratch'
-  outdir = './e_bands/'
+  outdir = './e_bands_cutoff/'
   prefix = 'GeTe'
   pseudo_dir = '../pseudo/'
   max_seconds = 3600
@@ -26,9 +26,9 @@ do
   disk_io = 'none'
 /
 &SYSTEM
-  ibrav = 5
-  celldm(1) = 8.2678614363
-  celldm(4) = 0.53248150505214
+  ibrav = 5 ! rhombohedral primitive cell
+  celldm(1) = 8.267861436 ! Bohr
+  celldm(4) = 0.532481505 ! cosine between the two vectors of the Bravais
   nat = 2
   ntyp = 2
   ecutwfc = $ECUTOFF
