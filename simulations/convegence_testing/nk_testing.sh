@@ -28,7 +28,7 @@ cat > input_Nk/Nk_$NK.in << EOF
 &CONTROL
   calculation = 'scf'
   restart_mode = 'from_scratch'
-  outdir = './e_bands/'
+  outdir = './results/'
   prefix = 'GeTe'
   pseudo_dir = '../pseudo/'
   max_seconds = 3600

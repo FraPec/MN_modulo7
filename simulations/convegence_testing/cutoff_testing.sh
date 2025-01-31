@@ -18,7 +18,7 @@ do
 &CONTROL
   calculation = 'scf'
   restart_mode = 'from_scratch'
-  outdir = './e_bands_cutoff/'
+  outdir = './results/'
   prefix = 'GeTe'
   pseudo_dir = '../pseudo/'
   max_seconds = 3600

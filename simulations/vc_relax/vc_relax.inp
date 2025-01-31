@@ -1,7 +1,7 @@
 &CONTROL
   calculation = 'vc-relax'
   restart_mode = 'from_scratch'
-  outdir = './e_bands/'
+  outdir = './results/'
   prefix = 'GeTe'
   pseudo_dir = '../pseudo/'
   max_seconds = 3600
