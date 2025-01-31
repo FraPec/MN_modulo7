@@ -1,0 +1,14 @@
+CELL_PARAMETERS (alat=  8.26786144)
+   0.481516590  -0.278003733   0.826741419
+   0.000000000   0.556007465   0.826741419
+  -0.481516590  -0.278003733   0.826741419
+
+ATOMIC_POSITIONS (crystal)
+Ge            0.0051576904        0.0051576904        0.0051576904
+Te            0.4738423096        0.4738423096        0.4738423096
+
+
+! The above are equivalent to use the following
+ibrav = 5
+celldm(1) = 8.20705691 ! Bohr
+celldm(4) = 0.53679573 ! cosine of the angle gamma between any pair of crystallographic vectors
