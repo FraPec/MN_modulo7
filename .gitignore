@@ -4,6 +4,8 @@
 *.bin
 *.x
 *.pdf
+*.eps
+*.ps
 *.png
 *.in
 *.kpf
@@ -11,3 +13,4 @@
 *.dat*
 *data*
 *results*
+*gnuplot*

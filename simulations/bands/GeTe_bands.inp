@@ -1,7 +1,7 @@
 &CONTROL
   calculation = 'bands'
   restart_mode = 'restart'
-  outdir = './results/'
+  outdir = './GeTe_bands/'
   prefix = 'GeTe'
   pseudo_dir = '../pseudo/'
   max_seconds = 3600
@@ -13,13 +13,18 @@
   celldm(4) = 0.53679573 ! cosine of the angle gamma between any pair of crystallographic vectors
   nat = 2
   ntyp = 2
-  ecutwfc = 40
-  ecutrho = 320 
+  ecutwfc = 80
+  ecutrho = 640 
   vdw_corr = 'grimme-d2'
+  nbnd = 20
 /
 &ELECTRONS
   conv_thr = 1.0d-8
   electron_maxstep = 100
+/
+&CELL
+/
+&BANDS
 /
 ATOMIC_SPECIES
 Ge     72.64 ge_pbe_v1.4.uspp.F.UPF
@@ -36,4 +41,3 @@ K_POINTS crystal_b
 0.5000000000     0.5000000000     0.5000000000 20 ! Z
 0.0000000000     0.0000000000     0.0000000000 40 ! GAMMA
 0.3720930233     0.0000000000    -0.3720930233  1 ! X
-
