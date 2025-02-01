@@ -6,3 +6,8 @@
 *.pdf
 *.png
 *.in
+*.kpf
+*.eps
+*.dat*
+*data*
+*results*
