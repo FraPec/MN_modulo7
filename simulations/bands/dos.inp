@@ -1,0 +1,7 @@
+&DOS
+  outdir = './GeTe_bands/'
+  prefix = 'GeTe'
+  fildos = './GeTe_bands/GeTe_dos.dat'
+  emin = 4.0,
+  emax = 11.0
+/
