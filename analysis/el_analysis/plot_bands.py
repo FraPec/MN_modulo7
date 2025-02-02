@@ -36,14 +36,12 @@ sym_points = k[sym_points_index]
 ax1.set_xticks(sym_points)
 ax1.tick_params(axis='y', labelsize=20)
 ax1.set_xticklabels(sym_labels, fontsize=20)
-ax1.axhline(homo, linewidth=2, label="E Fermi")
 
 data = np.loadtxt(dos_data)
 ax2.plot(data[:, 1], data[:, 0], linewidth=3, alpha=0.5, color='k')
 ax2.set_ylim(homo-5, homo+8)
 ax2.set_xlabel("dos(E)", fontsize=25)
 ax2.tick_params(axis='x', labelsize=20)
-ax2.axhline(homo, linewidth=2, label="E Fermi")
 
 # Find the index of the valence band maximum (VBM) closest to HOMO
 vbm_idx = np.argmin(np.abs(bands - homo))
@@ -51,6 +49,9 @@ vbm_idx = np.argmin(np.abs(bands - homo))
 row, col = np.unravel_index(vbm_idx, bands.shape)
 # Value
 vbm = bands[row, col]
+# Add the vbm line to the plot to show the gap
+ax1.axhline(vbm, linewidth=2, label="Valence band maximum", color="red")
+ax2.axhline(vbm, linewidth=2, label="Valence band maximum", color="red")
 
 # Find the index of the conduction band minimum (CBM) closest to LUMO
 cbm_idx = np.argmin(np.abs(bands - lumo))
@@ -58,12 +59,18 @@ cbm_idx = np.argmin(np.abs(bands - lumo))
 row, col = np.unravel_index(cbm_idx, bands.shape)
 # Value
 cbm = bands[row, col]
+# Add the vbm line to the plot to show the gap
+ax1.axhline(cbm, linewidth=2, label="Conduction band minimum", color="blue")
+ax2.axhline(cbm, linewidth=2, label="Conduction band minimum", color="blue")
 
 # Compute the band gap
 band_gap = cbm - vbm
 
-print(f"VBM: {vbm:.3f} eV, CBM: {cbm:.3f} eV")
-print(f"Band Gap: {band_gap:.3f} eV")
+props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
+ax1.text(0.65, 0.5, f"Gap = {band_gap:.3f} eV",
+         fontsize=15, transform=ax1.transAxes, verticalalignment='top', bbox=props)
+
+ax1.legend(fontsize=15)
 
 plt.show()
 
