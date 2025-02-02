@@ -1,6 +1,6 @@
 { 
-  "dos_data": "../simulations/bands/GeTe_bands/GeTe_dos.dat",
-  "bands_data": "../simulations/bands/GeTe_bands/GeTe_bands.dat.gnu",
+  "dos_data": "../../simulations/bands/GeTe_bands/GeTe_dos.dat",
+  "bands_data": "../../simulations/bands/GeTe_bands/GeTe_bands.dat.gnu",
   "sym_points_index": [0, 40, 80, 120, 160, 199],
   "sym_labels": ["$\\Gamma$", "L", "B1|B", "Z", "$\\Gamma$", "X"],
   "num_kpoints": 200,

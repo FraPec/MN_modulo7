@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider
 
 # Load JSON configuration
-with open("config.json", "r") as f:
+with open("config_el.json", "r") as f:
     config = json.load(f)
 
 dos_data = config["dos_data"]
@@ -33,13 +33,15 @@ for sym_point_i in sym_points_index:
     ax1.axvline(k[sym_point_i], linewidth=0.75, color='k', alpha=0.5)
 sym_points = k[sym_points_index]
 ax1.set_xticks(sym_points)
-ax1.set_xticklabels(sym_labels)
+ax1.tick_params(axis='y', labelsize=20)
+ax1.set_xticklabels(sym_labels, fontsize=20)
 ax1.axhline(homo, linewidth=2, label="E Fermi")
 
 data = np.loadtxt(dos_data)
 ax2.plot(data[:, 1], data[:, 0], linewidth=3, alpha=0.5, color='k')
 ax2.set_ylim(homo-5, homo+8)
 ax2.set_xlabel("dos(E)", fontsize=25)
+ax2.tick_params(axis='x', labelsize=20)
 ax2.axhline(homo, linewidth=2, label="E Fermi")
 
 

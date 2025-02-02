@@ -1,0 +1,7 @@
+{ 
+  "phonons_data": "../../simulations/phonons/GeTe_bands/GeTe.freq.gp",
+  "sym_points_index": [0, 40, 80, 130, 150, 200, 240, 280],
+  "sym_labels": ["W", "T", "$\\Gamma$", "K", "X", "$\\Gamma$", "L", "K"],
+  "num_kpoints": 280,
+  "num_bands": 6
+}
