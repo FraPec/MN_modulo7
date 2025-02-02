@@ -11,13 +11,13 @@ dos_data = config["dos_data"]
 bands_data = config["bands_data"]
 sym_points_index = config["sym_points_index"]
 sym_labels = config["sym_labels"]
-num_kpoints = config["num_kpoints"]
 num_bands = config["num_bands"]
 homo = config["homo"]
 lumo = config["lumo"]
 
 # Load band structure data
 data = np.loadtxt(bands_data)
+num_kpoints = data.shape[0]//num_bands
 k = data[:num_kpoints, 0]
 bands = np.reshape(data[:, 1], (-1, len(k)))
 
