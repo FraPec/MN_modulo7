@@ -14,6 +14,7 @@ sym_labels = config["sym_labels"]
 num_kpoints = config["num_kpoints"]
 num_bands = config["num_bands"]
 homo = config["homo"]
+lumo = config["lumo"]
 
 # Load band structure data
 data = np.loadtxt(bands_data)
@@ -44,6 +45,25 @@ ax2.set_xlabel("dos(E)", fontsize=25)
 ax2.tick_params(axis='x', labelsize=20)
 ax2.axhline(homo, linewidth=2, label="E Fermi")
 
+# Find the index of the valence band maximum (VBM) closest to HOMO
+vbm_idx = np.argmin(np.abs(bands - homo))
+# Unravel col and row in the bands matrix
+row, col = np.unravel_index(vbm_idx, bands.shape)
+# Value
+vbm = bands[row, col]
+
+# Find the index of the conduction band minimum (CBM) closest to LUMO
+cbm_idx = np.argmin(np.abs(bands - lumo))
+# Unravel col and row in the bands matrix
+row, col = np.unravel_index(cbm_idx, bands.shape)
+# Value
+cbm = bands[row, col]
+
+# Compute the band gap
+band_gap = cbm - vbm
+
+print(f"VBM: {vbm:.3f} eV, CBM: {cbm:.3f} eV")
+print(f"Band Gap: {band_gap:.3f} eV")
 
 plt.show()
 
