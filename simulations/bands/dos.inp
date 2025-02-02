@@ -3,6 +3,9 @@
   prefix = 'GeTe'
   fildos = './GeTe_bands/GeTe_dos.dat'
   emin = 2.0
-  emax = 14.0
-  DeltaE = 0.05
+  emax = 17.0
+  DeltaE = 0.01
+  bz_sum = 'smearing'
+  degauss = 0.01 ! Ry
+  ngauss = 0
 /
