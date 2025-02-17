@@ -1,0 +1,15 @@
+&INPUTPH
+  outdir = './GeTe_bands/'
+  prefix = 'GeTe'
+  tr2_ph = 1d-14
+  ldisp = .true.
+  epsil = .true.
+  recover = .true.
+  nq1 = 7
+  nq2 = 7
+  nq3 = 7
+  fildyn = './GeTe_bands/GeTe.dyn'
+  asr = .true
+/
+
+

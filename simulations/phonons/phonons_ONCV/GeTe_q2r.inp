@@ -1,0 +1,5 @@
+&INPUT
+  fildyn = './GeTe_bands/GeTe.dyn'
+  zasr = 'crystal'
+  flfrc = './GeTe_bands/GeTe.fc'
+/
