@@ -1,5 +1,5 @@
 &INPUT
-  fildyn = 'GeTe.dyn'
+  fildyn = './GeTe_bands/GeTe.dyn'
   zasr = 'crystal'
-  flfrc = 'GeTe.fc'
+  flfrc = './GeTe_bands/GeTe.fc'
 /

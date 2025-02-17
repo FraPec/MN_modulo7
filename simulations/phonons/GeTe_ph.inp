@@ -7,7 +7,7 @@
   nq1 = 7
   nq2 = 7
   nq3 = 7
-  fildyn = 'GeTe.dyn'
+  fildyn = './GeTe_bands/GeTe.dyn'
   asr = .true
 /
 

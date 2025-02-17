@@ -1,8 +1,9 @@
 &INPUT
+  fldyn = 'GeTe.dyn'
   asr = 'crystal'
-  flfrc = 'GeTe.fc'
-  flfrq = 'GeTe.freq'
-  flvec = 'GeTe.modes'
+  flfrc = './GeTe_bands/GeTe.fc'
+  flfrq = './GeTe_bands/GeTe.freq'
+  flvec = './GeTe_bands/GeTe.modes'
   q_in_band_form = .true.
   q_in_cryst_coord = .true.
 /
@@ -14,5 +15,3 @@
 0.500 0.000 0.500 50 ! X
 0.000 0.000 0.000   40 ! Gamma
 0.500 0.00 0.00 40 ! L
-0.63 0.24 0.63   0 ! K
-
