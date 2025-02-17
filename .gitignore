@@ -11,8 +11,11 @@
 *.kpf
 *.eps
 *.dat*
+*.zip
 *data*
 *results*
 *gnuplot*
+*.dyn
+*.fc
 GeTe_bands
 elstruct
