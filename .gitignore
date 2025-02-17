@@ -17,5 +17,8 @@
 *gnuplot*
 *.dyn
 *.fc
+*.xml
+*.wfc*
 GeTe_bands
 elstruct
+*old*
