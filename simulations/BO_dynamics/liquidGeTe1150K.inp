@@ -20,8 +20,8 @@
 &MOTION
     &MD
         ENSEMBLE NVT
-	STEPS 10000
-        MAX_STEPS 10000
+	STEPS 25000
+        MAX_STEPS 25000
 	TIMESTEP 2.0 #fs
 	TEMPERATURE 1150
 	COMVEL_TOL 1E-12 # maximum accepted velocity of center of mass

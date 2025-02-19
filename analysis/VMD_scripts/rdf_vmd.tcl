@@ -14,7 +14,7 @@ proc compute_gofr {sel1 sel2 output delta rmax usepbc selupdate first last step}
     close $outfile
 }
 
-set first_step 5000
+set first_step 15000
 set last_step -1
 set delta 0.05
 set rmax 7
