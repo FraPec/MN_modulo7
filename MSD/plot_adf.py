@@ -12,12 +12,12 @@ for file in os.listdir("data_RINGS/angles/"):
 adfTe = np.zeros(np.loadtxt("data_RINGS/angles/angle_Te_Te_Te.dat").shape[0])
 for file in file_paths:
         if "_Te_" in file:
-                adfTe += np.loadtxt(file)[:, 1]
+                adfTe += np.loadtxt(file)[:, 1]/np.max(np.loadtxt(file)[:, 1])
 
 adfGe = np.zeros(np.loadtxt("data_RINGS/angles/angle_Ge_Te_Te.dat").shape[0])
 for file in file_paths:
         if "_Ge_" in file:
-                adfGe += np.loadtxt(file)[:, 1]
+                adfGe += np.loadtxt(file)[:, 1]/np.max(np.loadtxt(file)[:, 1])
 
 angles = np.loadtxt("data_RINGS/angles/angle_Ge_Te_Te.dat")[:, 0]
 
