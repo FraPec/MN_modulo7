@@ -9,15 +9,21 @@ for file in os.listdir("data_RINGS/angles/"):
                 file_paths.append(os.path.join("data_RINGS/angles/", file))
 
 # Compute ADFs
-adfTe = np.zeros(np.loadtxt("data_RINGS/angles/angle_Te_Te_Te.dat").shape[0])
-for file in file_paths:
-        if "_Te_" in file:
-                adfTe += np.loadtxt(file)[:, 1]/np.max(np.loadtxt(file)[:, 1])
+weight_TeTe = 0.170627 
+weight_GeTe = 2.589158 
+weight_GeGe = 1.321388 
 
-adfGe = np.zeros(np.loadtxt("data_RINGS/angles/angle_Ge_Te_Te.dat").shape[0])
-for file in file_paths:
-        if "_Ge_" in file:
-                adfGe += np.loadtxt(file)[:, 1]/np.max(np.loadtxt(file)[:, 1])
+adfTeTeTe = np.loadtxt("data_RINGS/angles/angle_Te_Te_Te.dat")[:, 1] * weight_TeTe**2
+adfTeTeGe = np.loadtxt("data_RINGS/angles/angle_Te_Te_Ge.dat")[:, 1] * (weight_TeTe * weight_GeTe)
+adfGeTeTe = np.loadtxt("data_RINGS/angles/angle_Ge_Te_Te.dat")[:, 1] * (weight_TeTe * weight_GeTe)
+adfGeTeGe = np.loadtxt("data_RINGS/angles/angle_Ge_Te_Ge.dat")[:, 1] * weight_GeTe**2
+adfTe = adfTeTeTe + adfTeTeGe + adfGeTeTe + adfGeTeGe 
+
+adfGeGeGe = np.loadtxt("data_RINGS/angles/angle_Ge_Ge_Ge.dat")[:, 1] * weight_GeGe**2
+adfGeGeTe = np.loadtxt("data_RINGS/angles/angle_Ge_Ge_Te.dat")[:, 1] * (weight_GeGe * weight_GeTe)
+adfTeGeGe = np.loadtxt("data_RINGS/angles/angle_Te_Ge_Ge.dat")[:, 1] * (weight_GeGe * weight_GeTe)
+adfTeGeTe = np.loadtxt("data_RINGS/angles/angle_Te_Ge_Te.dat")[:, 1] * weight_GeTe**2
+adfGe = adfGeGeGe + adfGeGeTe + adfTeGeGe + adfTeGeTe
 
 angles = np.loadtxt("data_RINGS/angles/angle_Ge_Te_Te.dat")[:, 0]
 
